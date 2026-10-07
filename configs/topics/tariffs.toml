@@ -1,0 +1,13 @@
+name = "tariffs"
+subreddits = ["economics", "politics", "Conservative"]
+queries = ["tariffs", "trade war"]
+start = "2025-01-21"
+end = "2025-03-18"
+
+[[aspects]]
+name = "tariffs"
+patterns = ['\btariffs?\b']
+
+[[aspects]]
+name = "prices"
+patterns = ['\bprices?\b', '\binflation\b']

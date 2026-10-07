@@ -1,0 +1,17 @@
+name = "birthright-citizenship"
+subreddits = ["politics", "law", "Conservative"]
+queries = ["birthright citizenship", "14th amendment"]
+start = "2025-01-21"
+end = "2025-03-18"
+
+[[aspects]]
+name = "citizenship"
+patterns = ['\bcitizenship\b']
+
+[[aspects]]
+name = "14th amendment"
+patterns = ['14th [Aa]mendment', '[Ff]ourteenth [Aa]mendment']
+
+[[aspects]]
+name = "immigration"
+patterns = ['\bimmigra\w+']

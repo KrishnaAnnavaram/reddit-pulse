@@ -1,0 +1,17 @@
+name = "lgbtq-rights"
+subreddits = ["politics", "news", "Conservative"]
+queries = ["transgender executive order", "LGBTQ rights"]
+start = "2025-01-21"
+end = "2025-03-18"
+
+[[aspects]]
+name = "rights"
+patterns = ['\brights?\b']
+
+[[aspects]]
+name = "discrimination"
+patterns = ['\bdiscriminat\w*']
+
+[[aspects]]
+name = "transgender"
+patterns = ['\btrans(gender)?\b']

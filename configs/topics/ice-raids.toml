@@ -1,0 +1,16 @@
+# Topic config: one file for each topic. All topics use the same pipeline.
+name = "ice-raids"
+subreddits = ["politics", "news", "Conservative"]
+queries = ["ICE raids", "immigration raids", "deportation raids"]
+start = "2025-01-21"
+end = "2025-03-18"
+max_threads_per_query = 25
+
+[[aspects]]
+name = "ICE"
+patterns = ['\bICE\b', 'Immigration and Customs Enforcement']
+case_sensitive = true          # "ice" in lower case is frozen water, not the agency
+
+[[aspects]]
+name = "raids"
+patterns = ['\braids?\b']
