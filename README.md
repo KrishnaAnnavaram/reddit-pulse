@@ -9,7 +9,7 @@
 ![Topic configs](https://img.shields.io/badge/Topic_configs-4-1F3864?style=for-the-badge)
 ![Sentiment labels](https://img.shields.io/badge/Labels-neg_%7C_neu_%7C_pos-2E5FD9?style=for-the-badge)
 ![CLI commands](https://img.shields.io/badge/CLI_commands-9-6E86E8?style=for-the-badge)
-![Tests](https://img.shields.io/badge/Tests-24_passing-3DA35B?style=for-the-badge)
+![Tests](https://img.shields.io/badge/Tests-23_passing-3DA35B?style=for-the-badge)
 ![Offline demo](https://img.shields.io/badge/Offline_demo-Yes-F5C542?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-A0399B?style=for-the-badge)
 
@@ -105,7 +105,7 @@ reddit-pulse gives each of these questions its own component. Each component has
 | Models | `lexicon` (offline), any Hugging Face sentiment or ABSA classifier (optional) |
 | Offline mode | Synthetic comments, the lexicon models, NMF topics and SQLite. No account, no key and no network |
 | Safety | Credentials only from the environment, salted author hashes, mention scrubbing, no data in git |
-| Tests | **24** unit tests (`pytest`): 24 pass locally with the model test turned on, 23 pass and 1 skips in CI |
+| Tests | **24** unit tests (`pytest`). CI installs only `.[dev]`: **23** pass and 1 skips (the model test). With `PULSE_TEST_HF=1` and the `transformers` extra: 24 pass |
 
 ```mermaid
 flowchart LR
@@ -421,8 +421,8 @@ Planned milestones (not built):
 
 | Validation | Result | Command |
 |---|---|---|
-| Unit tests (local, `PULSE_TEST_HF=1`) | **24 passed** | `pytest -q` |
-| Unit tests (CI simulation, clean venv, `.[dev]` only) | **23 passed, 1 skipped** | `pip install -e ".[dev]"`, `pytest -q` |
+| Unit tests (CI installs only `.[dev]`) | **23 passed, 1 skipped** (the Hugging Face model test) | `pytest -q` |
+| Unit tests with `PULSE_TEST_HF=1` and the `transformers` extra | **24 passed** | `pytest -q` |
 | Filters on 605 synthetic comments | Kept 562. Bot 14, deleted 10, duplicate 17, not English 2 | `reddit-pulse demo` |
 | Annotator agreement (300 comments) | Cohen's kappa **0.784**, raw agreement 0.857, 43 ties left out | `reddit-pulse demo` |
 | Lexicon sentiment, model view (257 gold) | Macro-F1 **0.806** [0.753, 0.857] | `reddit-pulse demo` |
